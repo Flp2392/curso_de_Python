@@ -1,0 +1,46 @@
+#Exemplo de classe em Python:
+class Carro:
+    def __init__(self, marca, modelo):
+        self.marca = marca
+        self.modelo = modelo
+    def acelerar (self):
+        print('O carro está acelerando.')
+
+    def frear (self):
+        print ('O carro está freando.')
+
+# Exemplo de criação de objetos a partir de uma classe:
+
+carro1 = Carro ('Ford', 'Mustang')
+carro2 = Carro ('Chevrolet', 'Camaro')
+
+# Exemplo de acesso a atributos e chamada de métodos:
+print (carro1.marca) # Saída: Ford 
+print (carro2.modelo) # Saída: camaro
+
+carro1.acelerar () # Saída: o carro está acelerando
+carro2.frear () # Saída: o carro está freando
+
+#Exemplo de herança:
+
+class CarroEsportivo(Carro):
+    def __init__(self, marca, modelo, potencia):
+        super().__init__(marca, modelo)
+        self.potencia = potencia
+
+    def turbo(self):
+        print ('Ativando o turbo!')
+
+    def frase (self):
+        print ('Este carro é da', self.marca, 'seu modelo é', self.modelo, 'e a portência é de', self.potencia)
+
+'''marca1 = CarroEsportivo('Fiat')
+modelo1 = CarroEsportivo('Jeep')
+potencia1 = CarroEsportivo('100 CV')'''
+
+
+
+carro_esportivo = CarroEsportivo ('Ferrari', '458 Italia', 570)
+carro_esportivo.acelerar() # Saída: O carro está acelerando. 
+carro_esportivo.turbo() #Saída: Ativando o turbo!
+carro_esportivo.frase() #Saída: Ativando o turbo!
